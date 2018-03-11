@@ -14,7 +14,7 @@ Product.delete_all
 puts "Creating a product"
 #...
 5.times do 
-    Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
+    Product.create!(title: "Seven Mobile Apps in Seven Weeks #{rand(1..100)}",
     description:
         %{<p>
         <em>Native Apps, Multiple Platforms</em>
@@ -25,7 +25,7 @@ puts "Creating a product"
         out which cross-platform solution makes the most sense for your needs.
         </p>},
     image_url: '7apps.jpg',
-    price: 26.00)
+    price: rand(55))
 end
 #...
 
