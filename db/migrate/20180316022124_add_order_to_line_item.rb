@@ -3,4 +3,3 @@ class AddOrderToLineItem < ActiveRecord::Migration[5.1]
     add_reference :line_items, :order, foreign_key: true
   end
 end
-
