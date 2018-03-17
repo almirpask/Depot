@@ -75,6 +75,7 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
 
+    
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
         redirect_to store_index_url, notice: 'Your cart is empty'

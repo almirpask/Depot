@@ -7,3 +7,4 @@ class OrdersTest < ApplicationSystemTestCase
   #   assert_selector "h1", text: "Order"
   # end
 end
+
