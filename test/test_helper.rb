@@ -7,12 +7,17 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+class ActionDispatch::IntegrationTest
+  def login_as(user)
+    post login_url, params: { name: user.name, password: 'secret' }
+  end
 
+  def logout
+    delete logout_url
+  end
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new app, browser: :chrome,
-       options:
-   Selenium::WebDriver::Chrome::Options.new(args:
-   %w[headless disable-gpu])
+  def setup
+    login_as users(:one)
+  end
 end
-Capybara.javascript_driver = :chrome
+
